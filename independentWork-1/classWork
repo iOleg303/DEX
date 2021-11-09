@@ -1,0 +1,10 @@
+//премия для сотрудника в день рождения
+export const getHolidayPrizes = (f, s, t) => {
+  let date = new Date();
+  let bithday = Date(s);
+  let month = bithday.getMonth===date.getMonth();
+  let day = bithday.getDay===date.getDay();
+  if(month && day){
+    return 1;
+  }
+};
