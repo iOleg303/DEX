@@ -56,6 +56,7 @@ export const calcSum = (cartData) => {
 
 export const getCartItemsByDate = (cartData, date) => {
     //TODO: выбрать покупки сделанные за выбранную дату
+    if(date === "") {return cartData}
     date = new Date(date);
     return cartData.filter(el => {
         let elDate = new Date(el.date);
@@ -71,6 +72,7 @@ export const repeatOrder = (cartData, date) => {
     // поставить в начало спиcка
     // дату текущую
     // поменять id на уникальный
+    if(date === "") {return cartData}
     let arr = getCartItemsByDate(cartData, date);
     let ind = +cartData[cartData.length-1].id + 1;
     for(let item of arr){
@@ -80,7 +82,7 @@ export const repeatOrder = (cartData, date) => {
         }
         newObj.date = new Date();
         newObj.id = ind;
-        cartData.unshift(newObj);
+        //cartData.unshift(newObj); //не получилось исправить 
         ind++;
     }
     return cartData;
