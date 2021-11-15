@@ -23,7 +23,6 @@ export const makeCartItemCopy = (cartItem) => {
             newObj[key] = obj[key] + 1;
         } else if (obj[key][0]?.count !== undefined) {
             newObj[key][0].count = obj[key][0].count + 1;
-        } else {
         }
     }
     return newObj;
@@ -90,7 +89,7 @@ export const repeatOrder = (cartData, date) => {
 
 export const addItem = (cartData, item) => {
     //TODO: увеличить кол-во товара в полученном элементе
-    item.count++;
+    item.count++; //возможно я не понял условие...
     return cartData;
 };
 
